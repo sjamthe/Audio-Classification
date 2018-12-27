@@ -1,0 +1,51 @@
+sjamthe-macbookpro:Audio-Classification sjamthe$ python3 model.py
+/anaconda/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 26410/26410 [00:47<00:00, 557.37it/s]
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm_1 (LSTM)                (None, 9, 128)            72704
+_________________________________________________________________
+lstm_2 (LSTM)                (None, 9, 128)            131584
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 9, 128)            0
+_________________________________________________________________
+time_distributed_1 (TimeDist (None, 9, 64)             8256
+_________________________________________________________________
+time_distributed_2 (TimeDist (None, 9, 32)             2080
+_________________________________________________________________
+time_distributed_3 (TimeDist (None, 9, 16)             528
+_________________________________________________________________
+time_distributed_4 (TimeDist (None, 9, 8)              136
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 72)                0
+_________________________________________________________________
+dense_5 (Dense)              (None, 10)                730
+=================================================================
+Total params: 216,018
+Trainable params: 216,018
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+2018-12-26 22:47:32.810335: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+26410/26410 [==============================] - 17s 625us/step - loss: 1.6384 - acc: 0.3908
+Epoch 2/10
+26410/26410 [==============================] - 15s 574us/step - loss: 1.0729 - acc: 0.6205
+Epoch 3/10
+26410/26410 [==============================] - 15s 580us/step - loss: 0.8212 - acc: 0.7197
+Epoch 4/10
+26410/26410 [==============================] - 15s 585us/step - loss: 0.6850 - acc: 0.7668
+Epoch 5/10
+26410/26410 [==============================] - 15s 578us/step - loss: 0.5946 - acc: 0.7992
+Epoch 6/10
+26410/26410 [==============================] - 15s 580us/step - loss: 0.5168 - acc: 0.8269
+Epoch 7/10
+26410/26410 [==============================] - 15s 578us/step - loss: 0.4743 - acc: 0.8408
+Epoch 8/10
+26410/26410 [==============================] - 16s 589us/step - loss: 0.4356 - acc: 0.8538
+Epoch 9/10
+26410/26410 [==============================] - 15s 582us/step - loss: 0.3965 - acc: 0.8644
+Epoch 10/10
+26410/26410 [==============================] - 16s 587us/step - loss: 0.3763 - acc: 0.8718
